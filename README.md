@@ -16,6 +16,14 @@ token: <TF-CLOUD-USER-API-TOKEN>
 organization: <YOUR-ORGANIZATION> # This will be the organization you want use when working with workspaces
 ```
 
+Can also use ENV VARs prefixed with `TFCLOUD_` for config settings. This will check for the ENV VAR first and if they are not set, it will fallback to the config file.
+
+Example using ENV VARs
+```bash
+export TFCLOUD_TOKEN=fakeToken
+export TFCLOUD_ORGANIZATION=fakeOrg
+```
+
 # Listing organizations
 To view list organizations your account is associated with
 ```bash

@@ -17,8 +17,9 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/spf13/cobra"
 	"os"
+
+	"github.com/spf13/cobra"
 
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
@@ -83,6 +84,9 @@ func initConfig() {
 	}
 
 	viper.AutomaticEnv() // read in environment variables that match
+	viper.SetEnvPrefix("tfcloud")
+	viper.BindEnv("token")
+	viper.BindEnv("organization")
 
 	// If a config file is found, read it in.
 	if err := viper.ReadInConfig(); err == nil {
